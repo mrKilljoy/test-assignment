@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Reflection;
 using System.Text;
 using System.Threading.Channels;
 
@@ -21,7 +22,7 @@ public class TextGenerator : IGenerator
             if (string.IsNullOrEmpty(outputFilePath))
             {
                 Console.WriteLine("Output file path is not specified, current directory is selected.");
-                outputFilePath = Path.Combine(Directory.GetCurrentDirectory(), "generated-file.txt");
+                outputFilePath = CreateDefaultOutputPath();
             }
 
             if (File.Exists(outputFilePath))
@@ -145,7 +146,7 @@ public class TextGenerator : IGenerator
         }
     }
     
-    private static async Task WriteLines(Channel<string> channel, string filePath)
+    private async Task WriteLines(Channel<string> channel, string filePath)
     {
         try
         {
@@ -167,5 +168,11 @@ public class TextGenerator : IGenerator
             Console.WriteLine(ex.Message);
             throw;
         }
+    }
+
+    private string CreateDefaultOutputPath()
+    {
+        var folderPath = Path.GetDirectoryName(Assembly.GetEntryAssembly()?.Location);
+        return Path.Combine(folderPath, "generated-file.txt");
     }
 }
