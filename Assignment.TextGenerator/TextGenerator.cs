@@ -15,6 +15,7 @@ public class TextGenerator : IGenerator
     
     public async Task CreateFile(string outputFilePath = null)
     {
+        var sw = Stopwatch.StartNew();
         try
         {
             if (string.IsNullOrEmpty(outputFilePath))
@@ -22,13 +23,13 @@ public class TextGenerator : IGenerator
                 Console.WriteLine("Output file path is not specified, current directory is selected.");
                 outputFilePath = Path.Combine(Directory.GetCurrentDirectory(), "generated-file.txt");
             }
-            
+
             if (File.Exists(outputFilePath))
             {
                 Console.WriteLine("File with this name already exists.");
                 return;
             }
-            
+
             Console.WriteLine($"Output file path: {outputFilePath}");
 
             if (!ValidateOptions(_options))
@@ -46,6 +47,11 @@ public class TextGenerator : IGenerator
         {
             Console.WriteLine("An unexpected error has occurred. See the details below.");
             Console.WriteLine(ex);
+        }
+        finally
+        {
+            sw.Stop();
+            Console.WriteLine($"Total time: {sw.Elapsed.ToString()}");
         }
     }
 
@@ -101,7 +107,6 @@ public class TextGenerator : IGenerator
     
     private async Task PopulateQueue(Channel<string> channel, string[] words)
     {
-        var sw = Stopwatch.StartNew();
         try
         {
             Random rnd = new();
@@ -138,16 +143,10 @@ public class TextGenerator : IGenerator
             Console.WriteLine(ex.Message);
             throw;
         }
-        finally
-        {
-            sw.Stop();
-            Console.WriteLine($"Populating line buffer: {sw.Elapsed.ToString()}");
-        }
     }
     
     private static async Task WriteLines(Channel<string> channel, string filePath)
     {
-        var sw = Stopwatch.StartNew();
         try
         {
             using FileStream fs = File.Create(filePath);
@@ -167,11 +166,6 @@ public class TextGenerator : IGenerator
         {
             Console.WriteLine(ex.Message);
             throw;
-        }
-        finally
-        {
-            sw.Stop();
-            Console.WriteLine($"Writing data to file: {sw.Elapsed.ToString()}");
         }
     }
 }
