@@ -1,4 +1,4 @@
-﻿namespace Assignment.TextSort;
+﻿namespace Assignment.Infrastructure.Interfaces;
 
 public interface ISortService
 {

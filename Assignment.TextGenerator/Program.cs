@@ -1,4 +1,7 @@
-﻿namespace Assignment.TextGenerator;
+﻿using Assignment.Infrastructure.Configuration;
+using Assignment.Infrastructure.Interfaces;
+
+namespace Assignment.TextGenerator;
 
 class Program
 {
@@ -8,7 +11,7 @@ class Program
         if (options is null)
             return;
         
-        IGenerator generator = new TextGenerator(options);
+        IGenerator generator = new Infrastructure.Services.TextGenerator(options);
         await generator.CreateFile(outputPath);
     }
 

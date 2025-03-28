@@ -1,4 +1,4 @@
-﻿namespace Assignment.TextGenerator;
+﻿namespace Assignment.Infrastructure.Interfaces;
 
 public interface IGenerator
 {

@@ -1,7 +1,10 @@
 ﻿using System.Collections.Concurrent;
 using System.Diagnostics;
+using Assignment.Infrastructure.Configuration;
+using Assignment.Infrastructure.Interfaces;
+using Assignment.Infrastructure.Shared;
 
-namespace Assignment.TextSort;
+namespace Assignment.Infrastructure.Services;
 
 public class TextSortService : ISortService
 {

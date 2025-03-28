@@ -1,4 +1,4 @@
-﻿namespace Assignment.TextSort;
+﻿namespace Assignment.Infrastructure.Shared;
 
 public class CustomStringComparer : IComparer<(string, string)>
 {

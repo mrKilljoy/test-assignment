@@ -1,4 +1,8 @@
-﻿namespace Assignment.TextSort;
+﻿using Assignment.Infrastructure.Configuration;
+using Assignment.Infrastructure.Interfaces;
+using Assignment.Infrastructure.Services;
+
+namespace Assignment.TextSort;
 
 class Program
 {

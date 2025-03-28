@@ -1,4 +1,4 @@
-﻿namespace Assignment.TextGenerator;
+﻿namespace Assignment.Infrastructure.Configuration;
 
 public class TextGeneratorOptions
 {

@@ -1,4 +1,4 @@
-﻿namespace Assignment.TextSort;
+﻿namespace Assignment.Infrastructure.Configuration;
 
 public class TextSortOptions
 {

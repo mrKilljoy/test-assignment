@@ -2,8 +2,10 @@
 using System.Reflection;
 using System.Text;
 using System.Threading.Channels;
+using Assignment.Infrastructure.Configuration;
+using Assignment.Infrastructure.Interfaces;
 
-namespace Assignment.TextGenerator;
+namespace Assignment.Infrastructure.Services;
 
 public class TextGenerator : IGenerator
 {

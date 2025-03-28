@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment.TextGenerator", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment.TextSort", "Assignment.TextSort\Assignment.TextSort.csproj", "{379998EA-EF62-4E1D-8A5F-24A7725F9717}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment.Infrastructure", "Assignment.Infrastructure\Assignment.Infrastructure.csproj", "{4E2BF745-A5F4-4435-9B76-CF344DD4352E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{379998EA-EF62-4E1D-8A5F-24A7725F9717}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{379998EA-EF62-4E1D-8A5F-24A7725F9717}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{379998EA-EF62-4E1D-8A5F-24A7725F9717}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E2BF745-A5F4-4435-9B76-CF344DD4352E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E2BF745-A5F4-4435-9B76-CF344DD4352E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E2BF745-A5F4-4435-9B76-CF344DD4352E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E2BF745-A5F4-4435-9B76-CF344DD4352E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
